@@ -1,0 +1,5 @@
+"Endpoint","Method","Purpose","Key Attributes"
+"/api/world-routes","GET","Fetch international routes to Yalta","ID, name, transport, path (coordinates)"
+"/api/local-routes","GET","Fetch local routes within Yalta region","ID, name, transport, path (coordinates)"
+"/api/poi","GET","Fetch points of interest with details","ID, name, lat, lng, type, description, photos"
+"/api/map-config","GET","Provide initial map view settings (optional)","Center (lat, lng), zoom"
