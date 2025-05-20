@@ -1,38 +1,10 @@
 [
   {
-    "id": 4,
-    "name": "Simferopol Airport to Livadia Palace",
-    "transport": "car",
+    "id": "int",
+    "name": "string",
+    "transport": "string",
     "path": [
-      [44.6333, 34.0833],
-      [44.4949, 34.1745]
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Yalta Train Station to Vorontsov Palace",
-    "transport": "car",
-    "path": [
-      [44.4950, 34.1750],
-      [44.4833, 34.1667]
-    ]
-  },
-  {
-    "id": 6,
-    "name": "Simferopol Airport to Massandra Palace",
-    "transport": "car",
-    "path": [
-      [44.6333, 34.0833],
-      [44.4500, 34.0833]
-    ]
-  },
-  {
-    "id": 7,
-    "name": "Simferopol Airport to Koreiz Palace",
-    "transport": "car",
-    "path": [
-      [44.6333, 34.0833],
-      [44.4750, 34.1500]
-    ]
-  }
+  ["float", "float"]
+]
+}
 ]

@@ -1,4 +1,4 @@
 {
-  "center": [44.4949, 34.1745],
-  "zoom": 12
+  "center": ["float", "float"],
+"zoom": "int"
 }

@@ -1,47 +1,11 @@
 [
   {
-    "id": 1,
-    "name": "Livadia Palace",
-    "lat": 44.4949,
-    "lng": 34.1745,
-    "type": "conference",
-    "description": "The Livadia Palace was the main venue for the Yalta Conference in February 1945, where Stalin, Roosevelt, and Churchill met to discuss post-World War II arrangements.",
-    "photos": [
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/U.S._delegation_at_the_Yalta_Conference.jpg/220px-U.S._delegation_at_the_Yalta_Conference.jpg",
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Livadiya_Conference.JPG/220px-Livadiya_Conference.JPG"
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Vorontsov Palace",
-    "lat": 44.4833,
-    "lng": 34.1667,
-    "type": "residence",
-    "description": "Winston Churchill and his delegation stayed at the Vorontsov Palace during the Yalta Conference.",
-    "photos": [
-      "[invalid url, do not cite]"
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Massandra Palace",
-    "lat": 44.4500,
-    "lng": 34.0833,
-    "type": "residence",
-    "description": "Joseph Stalin and his delegation resided at the Massandra Palace during the conference.",
-    "photos": [
-      "[invalid url, do not cite]"
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Koreiz Palace (Yusupov Palace)",
-    "lat": 44.4750,
-    "lng": 34.1500,
-    "type": "residence",
-    "description": "Franklin D. Roosevelt and his delegation stayed at the Koreiz Palace (Yusupov Palace) during the Yalta Conference.",
-    "photos": [
-      "[invalid url, do not cite]"
-    ]
+    "id": "int",
+    "name": "string",
+    "lat": "float",
+    "lng": "float",
+    "type": "string",
+    "description": "string",
+    "photos": ["string"]
   }
 ]

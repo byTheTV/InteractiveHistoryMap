@@ -1,29 +1,10 @@
 [
   {
-    "id": 1,
-    "name": "Washington D.C. to Yalta by plane",
-    "transport": "plane",
+    "id": "int",
+    "name": "string",
+    "transport": "string",
     "path": [
-      [38.8951, -77.0364],
-      [44.4949, 34.1745]
-    ]
-  },
-  {
-    "id": 2,
-    "name": "London to Yalta by plane",
-    "transport": "plane",
-    "path": [
-      [51.5074, -0.1278],
-      [44.4949, 34.1745]
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Moscow to Yalta by train",
-    "transport": "train",
-    "path": [
-      [55.7558, 37.6173],
-      [44.4949, 34.1745]
-    ]
-  }
+  ["float", "float"]
+]
+}
 ]
