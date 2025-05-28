@@ -4,6 +4,7 @@ import (
 	"history-project-backend/database"
 	"history-project-backend/models"
 	"net/http"
+	"strconv"
 
 	"github.com/gin-gonic/gin"
 )
@@ -94,4 +95,36 @@ func (h *APIHandler) GetMapConfig(c *gin.Context) {
 	}
 
 	c.JSON(http.StatusOK, config)
+}
+
+func (h *APIHandler) GetParticipantRoutes(c *gin.Context) {
+	participantID, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid participant ID"})
+		return
+	}
+
+	routes, err := h.db.GetParticipantRoutes(participantID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, routes)
+}
+
+func (h *APIHandler) GetParticipantPOIs(c *gin.Context) {
+	participantID, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "Invalid participant ID"})
+		return
+	}
+
+	pois, err := h.db.GetParticipantPOIs(participantID)
+	if err != nil {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": err.Error()})
+		return
+	}
+
+	c.JSON(http.StatusOK, pois)
 }

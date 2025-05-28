@@ -1,13 +1,19 @@
 package models
 
 type Route struct {
-	ID                    int          `json:"id" db:"id"`
-	Name                  string       `json:"name" db:"name"`
-	Transport             string       `json:"transport" db:"transport"`
-	IsGlobal              bool         `json:"is_global" db:"is_global"`
-	Country               *string      `json:"country,omitempty" db:"country"`
-	Path                  []RoutePoint `json:"path" db:"-"`
-	CategoryParticipantID *int         `json:"category_participant_id,omitempty" db:"category_participant_id"`
+	ID           int           `json:"id" db:"id"`
+	Name         string        `json:"name" db:"name"`
+	Transport    string        `json:"transport" db:"transport"`
+	IsGlobal     bool          `json:"is_global" db:"is_global"`
+	Country      *string       `json:"country,omitempty" db:"country"`
+	Path         []RoutePoint  `json:"path" db:"-"`
+	Participants []Participant `json:"participants,omitempty" db:"-"`
+}
+
+type RouteParticipant struct {
+	ID            int `json:"id" db:"id"`
+	RouteID       int `json:"route_id" db:"route_id"`
+	ParticipantID int `json:"participant_id" db:"participant_id"`
 }
 
 type RoutePoint struct {
@@ -18,15 +24,21 @@ type RoutePoint struct {
 }
 
 type POI struct {
-	ID                    int        `json:"id" db:"id"`
-	Name                  string     `json:"name" db:"name"`
-	Lat                   float64    `json:"lat" db:"lat"`
-	Lng                   float64    `json:"lng" db:"lng"`
-	Type                  string     `json:"type" db:"type"`
-	Description           string     `json:"description" db:"description"`
-	IsLivingPlace         *string    `json:"is_living_place,omitempty" db:"is_living_place"`
-	ResidentParticipantID *int       `json:"resident_participant_id,omitempty" db:"resident_participant_id"`
-	Photos                []POIPhoto `json:"photos" db:"-"`
+	ID            int           `json:"id" db:"id"`
+	Name          string        `json:"name" db:"name"`
+	Lat           float64       `json:"lat" db:"lat"`
+	Lng           float64       `json:"lng" db:"lng"`
+	Type          string        `json:"type" db:"type"`
+	Description   string        `json:"description" db:"description"`
+	IsLivingPlace *bool         `json:"is_living_place,omitempty" db:"is_living_place"`
+	Photos        []POIPhoto    `json:"photos" db:"-"`
+	Participants  []Participant `json:"participants,omitempty" db:"-"`
+}
+
+type POIParticipant struct {
+	ID            int `json:"id" db:"id"`
+	POIID         int `json:"poi_id" db:"poi_id"`
+	ParticipantID int `json:"participant_id" db:"participant_id"`
 }
 
 type POIPhoto struct {
@@ -57,7 +69,8 @@ type RouteFilter struct {
 }
 
 type POIFilter struct {
-	Type *string `form:"type,omitempty"`
+	Type          *string `form:"type,omitempty"`
+	IsLivingPlace *bool   `form:"is_living_place,omitempty"`
 }
 
 type ParticipantFilter struct {
