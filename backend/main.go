@@ -30,7 +30,6 @@ func main() {
 
 		c.Next()
 	})
-
 	api := r.Group("/api")
 	{
 		api.GET("/world-routes", handler.GetWorldRoutes)
@@ -38,6 +37,9 @@ func main() {
 		api.GET("/poi", handler.GetPOIs)
 		api.GET("/participants", handler.GetParticipants)
 		api.GET("/map-config", handler.GetMapConfig)
+
+		api.GET("/participants/:id/routes", handler.GetParticipantRoutes)
+		api.GET("/participants/:id/pois", handler.GetParticipantPOIs)
 	}
 
 	r.GET("/health", func(c *gin.Context) {
