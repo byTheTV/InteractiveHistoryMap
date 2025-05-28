@@ -5,6 +5,10 @@
     "lat": "float",
     "lng": "float",
     "type": "string",
+    "is_living_place": "boolean",
+    "resident_id": "int",
+    "resident_name": "string",
+    "resident_role": "string",
     "description": "string",
     "photos": ["string"]
   }

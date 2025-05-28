@@ -3,6 +3,10 @@
     "id": "int",
     "name": "string",
     "transport": "string",
+    "country": "string",
+    "participant_id": "int",
+    "participant_name": "string",
+    "participant_role": "string",
     "path": [
   ["float", "float"]
 ]
