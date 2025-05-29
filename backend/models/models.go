@@ -1,13 +1,19 @@
 package models
 
 type Route struct {
-	ID                    int          `json:"id" db:"id"`
-	Name                  string       `json:"name" db:"name"`
-	Transport             string       `json:"transport" db:"transport"`
-	IsGlobal              bool         `json:"is_global" db:"is_global"`
-	Country               *string      `json:"country,omitempty" db:"country"`
-	Path                  []RoutePoint `json:"path" db:"-"`
-	CategoryParticipantID *int         `json:"category_participant_id,omitempty" db:"category_participant_id"`
+	ID           int           `json:"id" db:"id"`
+	Name         string        `json:"name" db:"name"`
+	Transport    string        `json:"transport" db:"transport"`
+	IsGlobal     bool          `json:"is_global" db:"is_global"`
+	Country      *string       `json:"country,omitempty" db:"country"`
+	Path         []RoutePoint  `json:"path" db:"-"`
+	Participants []Participant `json:"participants,omitempty" db:"-"`
+}
+
+type RouteParticipant struct {
+	ID            int `json:"id" db:"id"`
+	RouteID       int `json:"route_id" db:"route_id"`
+	ParticipantID int `json:"participant_id" db:"participant_id"`
 }
 
 type RoutePoint struct {
@@ -57,7 +63,8 @@ type RouteFilter struct {
 }
 
 type POIFilter struct {
-	Type *string `form:"type,omitempty"`
+	Type          *string `form:"type,omitempty"`
+	IsLivingPlace *bool   `form:"is_living_place,omitempty"`
 }
 
 type ParticipantFilter struct {
