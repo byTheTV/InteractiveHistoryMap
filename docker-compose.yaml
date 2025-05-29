@@ -1,7 +1,8 @@
-version: "3.9"
-
 services:
   backend:
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -26,9 +27,12 @@ services:
       - history-project-network
 
   frontend:
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
     build:
-      context: .
-      dockerfile: frontend.Dockerfile
+      context: ./frontend
+      dockerfile: Dockerfile
     depends_on:
       backend:
         condition: service_healthy
@@ -43,3 +47,4 @@ services:
 networks:
   history-project-network:
     driver: bridge
+

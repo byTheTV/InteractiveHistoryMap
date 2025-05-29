@@ -1,15 +1,9 @@
-/* global React, ReactDOM, ReactRouterDOM, L */
-// =============================================================================
-//  Interactive map — Tailwind UI (RU labels, POI photo preview)
-// =============================================================================
 const { useState, useEffect, useMemo, useRef } = React;
 const { BrowserRouter, Route, Switch, Link, useLocation, useHistory } = ReactRouterDOM;
 
-// ---------------- helpers ---------------- //
 const API_BASE = window.API_BASE || "http://localhost:8080";
 const fetchJSON = (p, i) => fetch(`${API_BASE}${p}`, i).then(async r => { if (!r.ok) throw new Error(await r.text()); return r.json(); });
 
-// цвет линии: страна > транспорт > дефолт
 const COLORS = { air: "#ef4444", sea: "#3b82f6", rail: "#10b981", road: "#f97316" };
 const COUNTRY_COLORS = {
     'США': '#3b82f6',
@@ -44,7 +38,6 @@ function useConferenceData({ isGlobal, country, transport, poiType }) {
     return state;
 }
 
-// ---------------- Leaflet wrappers ---------------- //
 function MapContainer({ center, zoom, children }) {
     const ref = useRef();
     const [map, setMap] = useState(null);
@@ -85,7 +78,6 @@ function Marker({ map, clusterGroup, position, popupHTML }) {
     return null;
 }
 
-// ---------------- UI ---------------- //
 function Filters({ country, setCountry, transport, setTransport, poiType, setPoiType }) {
     const base = 'bg-white/70 backdrop-blur px-3 py-2 rounded-lg border outline-none';
     return (
@@ -156,7 +148,6 @@ function MapView({ isGlobal }) {
     );
 }
 
-// ---------------- Participant list ---------------- //
 function ParticipantList() {
     const params = useQueryParams();
     const hist   = useHistory();
