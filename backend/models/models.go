@@ -24,21 +24,15 @@ type RoutePoint struct {
 }
 
 type POI struct {
-	ID            int           `json:"id" db:"id"`
-	Name          string        `json:"name" db:"name"`
-	Lat           float64       `json:"lat" db:"lat"`
-	Lng           float64       `json:"lng" db:"lng"`
-	Type          string        `json:"type" db:"type"`
-	Description   string        `json:"description" db:"description"`
-	IsLivingPlace *bool         `json:"is_living_place,omitempty" db:"is_living_place"`
-	Photos        []POIPhoto    `json:"photos" db:"-"`
-	Participants  []Participant `json:"participants,omitempty" db:"-"`
-}
-
-type POIParticipant struct {
-	ID            int `json:"id" db:"id"`
-	POIID         int `json:"poi_id" db:"poi_id"`
-	ParticipantID int `json:"participant_id" db:"participant_id"`
+	ID                    int        `json:"id" db:"id"`
+	Name                  string     `json:"name" db:"name"`
+	Lat                   float64    `json:"lat" db:"lat"`
+	Lng                   float64    `json:"lng" db:"lng"`
+	Type                  string     `json:"type" db:"type"`
+	Description           string     `json:"description" db:"description"`
+	IsLivingPlace         *bool      `json:"is_living_place,omitempty" db:"is_living_place"`
+	ResidentParticipantID *int       `json:"resident_participant_id,omitempty" db:"resident_participant_id"`
+	Photos                []POIPhoto `json:"photos" db:"-"`
 }
 
 type POIPhoto struct {

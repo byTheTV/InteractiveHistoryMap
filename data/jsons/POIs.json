@@ -6,9 +6,7 @@
     "lng": "float",
     "type": "string",
     "is_living_place": "boolean",
-    "resident_id": "int",
-    "resident_name": "string",
-    "resident_role": "string",
+    "resident_participant_id": "int",
     "description": "string",
     "photos": ["string"]
   }
