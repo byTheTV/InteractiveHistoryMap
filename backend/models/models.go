@@ -24,7 +24,7 @@ type POI struct {
 	Lng                   float64    `json:"lng" db:"lng"`
 	Type                  string     `json:"type" db:"type"`
 	Description           string     `json:"description" db:"description"`
-	IsLivingPlace         *string    `json:"is_living_place,omitempty" db:"is_living_place"`
+	IsLivingPlace         *bool      `json:"is_living_place,omitempty" db:"is_living_place"`
 	ResidentParticipantID *int       `json:"resident_participant_id,omitempty" db:"resident_participant_id"`
 	Photos                []POIPhoto `json:"photos" db:"-"`
 }
