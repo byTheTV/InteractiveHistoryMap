@@ -1,7 +1,7 @@
 const { useState, useEffect, useMemo, useRef } = React;
 const { BrowserRouter, Route, Switch, Link, useLocation, useHistory } = ReactRouterDOM;
 
-const API_BASE = window.API_BASE || "http://localhost:8080";
+const API_BASE = window.API_BASE || "/api";
 const fetchJSON = (p, i) => fetch(`${API_BASE}${p}`, i).then(async r => { if (!r.ok) throw new Error(await r.text()); return r.json(); });
 
 const COLORS = { air: "#ef4444", sea: "#3b82f6", rail: "#10b981", road: "#f97316" };
