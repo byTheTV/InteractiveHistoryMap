@@ -16,7 +16,7 @@ func main() {
 
 	handler := handlers.NewAPIHandler(db)
 
-	r := gin.Default()
+	r := gin.Default()	
 
 	r.Use(func(c *gin.Context) {
 		c.Header("Access-Control-Allow-Origin", "*")

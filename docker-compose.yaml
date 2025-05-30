@@ -42,7 +42,7 @@ services:
     ports:
       - "80:80"
     environment:
-      - API_BASE=http://localhost:8080
+      - API_BASE=http://backend:8080
     restart: unless-stopped
     networks:
       - history-project-network
