@@ -3,7 +3,7 @@ const { useState, useEffect, useMemo, useRef } = React;
 const { BrowserRouter, Route, Switch, Link, useLocation, useHistory } = ReactRouterDOM;
 
 // ---------------- helpers ---------------- //
-const API_BASE = window.API_BASE || "http://localhost:8080";
+const API_BASE = window.API_BASE || "/api";
 const fetchJSON = (p, i) => fetch(`${API_BASE}${p}`, i).then(async r => { if (!r.ok) throw new Error(await r.text()); return r.json(); });
 
 const COLORS = { самолёт: "#ef4444", поезд: "#10b981" };
