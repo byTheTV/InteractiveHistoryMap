@@ -1,6 +1,10 @@
 # Interactive-map-First-Yalta-Conference-
 History project that includes interactive map
 
+## Если ещё работает, то здесь:
+```
+http://212.233.90.176/
+```
 
 ## .env
 ```
